@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: grades
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  assignment_id :integer
+#  student_id    :integer
+#
+
 # require 'spec_helper'
 
 # describe Grade do

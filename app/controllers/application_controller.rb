@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate
   private
   def authenticate
-    @auth = User.find(session[:user_id]) if session[:user_id].present?
+    @auth = Teacher.find(session[:teacher_id]) if session[:teacher_id].present?
   end
 end

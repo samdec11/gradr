@@ -13,8 +13,8 @@ class Assignment < ActiveRecord::Base
   attr_accessible :name, :groupsize
   validates :name, :groupsize, :presence => true
   validates :groupsize, :numericality =>[:greater_than => 0]
-  has_and_belongs_to_many :students
-  has_many :groups
+  has_one :grade
+  belongs_to :group
 
   before_save :make_groups
   private

@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(:version => 20130316193116) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.integer  "assignment_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "teacher_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "groups_students", :id => false, :force => true do |t|
@@ -52,10 +52,9 @@ ActiveRecord::Schema.define(:version => 20130316193116) do
   create_table "teachers", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

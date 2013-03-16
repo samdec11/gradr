@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: assignments
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  groupsize  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Assignment do
@@ -33,14 +44,12 @@ describe Assignment do
       expect(assignment.id).to be nil
     end
   end
-
-
-  # describe '#grade' do
-  #   it 'belongs to an assignment' do
-  #     assignment = Assignment.new
-  #     grade = Grade.new
-  #     assignment.grade = grade
-  #     expect(assignment.grade).to be_an_instance_of(Grade)
-  #   end
-  # end
+  describe '#grade' do
+    it 'belongs to an assignment' do
+      assignment = Assignment.new
+      grade = Grade.new
+      assignment.grade = grade
+      expect(assignment.grade).to be_an_instance_of(Grade)
+    end
+  end
 end

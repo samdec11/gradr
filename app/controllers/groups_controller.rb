@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = @auth.groups.order(:name)
+    @groups = @auth.groups.order(:name) if @auth.present?
   end
   def new
     @group = Group.new

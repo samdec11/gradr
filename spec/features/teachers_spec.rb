@@ -14,7 +14,12 @@ describe 'Teachers' do
       teacher = Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
       group = Group.create(name: 'Class 1')
       teacher.groups << group
-      visit groups_path(teacher)
+      visit root_path
+      click_link('Login')
+      fill_in('Email', :with => teacher.email)
+      fill_in('Password', :with => 'a')
+      click_button('Start Grading')
+      visit groups_path
       page.should have_text('Class 1')
     end
   end

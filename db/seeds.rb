@@ -1,6 +1,13 @@
 Student.delete_all
 Assignment.delete_all
 Group.delete_all
+Teacher.delete_all
+Grade.delete_all
+
+t1 = Teacher.create(name: 'Mr Bob', email: 'mrbob@gmail.com', password: 'a', password_confirmation:'a')
+
+g1 = Group.create(name: 'Class 1')
+g2 = Group.create(name: 'Class 2')
 
 Student.create(name: 'Sean')
 Student.create(name: 'Nicky')
@@ -25,3 +32,14 @@ Student.create(name: 'Stephen')
 Student.create(name: 'Matt')
 Student.create(name: 'Nick')
 Student.create(name: 'Jeff')
+
+Assignment.create(name: 'Chinese history')
+Assignment.create(name: 'Algebra 1')
+Assignment.create(name: 'Book review 1')
+Assignment.create(name: 'English essay')
+Assignment.create(name: 'Italian')
+Assignment.create(name: 'Geometry')
+Assignment.create(name: 'Biography project')
+Assignment.create(name: 'Essay assignment')
+
+t1.groups = [g1, g2]

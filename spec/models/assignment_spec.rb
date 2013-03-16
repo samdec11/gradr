@@ -35,12 +35,12 @@ describe Assignment do
   end
 
 
-  describe '#grade' do
-    it 'belongs to an assignment' do
-      assignment = Assignment.new
-      grade = Grade.new
-      assignment.grade = grade
-      expect(assignment.grade).to be_an_instance_of(Grade)
-    end
-  end
+  # describe '#grade' do
+  #   it 'belongs to an assignment' do
+  #     assignment = Assignment.new
+  #     grade = Grade.new
+  #     assignment.grade = grade
+  #     expect(assignment.grade).to be_an_instance_of(Grade)
+  #   end
+  # end
 end

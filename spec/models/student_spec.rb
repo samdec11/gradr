@@ -34,13 +34,12 @@ describe Student do
     end
   end
 
-  describe '#grade' do
-    it 'belongs to a student' do
-      student = Student.new
-      grade = Grade.new
-      student.grade = grade
-      expect(student.grade).to be_an_instance_of(Grade)
-    end
-  end
-
+  # describe '#grade' do
+  #   it 'belongs to a student' do
+  #     student = Student.new
+  #     grade = Grade.new
+  #     student.grade = grade
+  #     expect(student.grade).to be_an_instance_of(Grade)
+  #   end
+  # end
 end

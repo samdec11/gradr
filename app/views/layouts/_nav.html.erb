@@ -7,6 +7,10 @@
       <li><%= link_to 'Home', root_path, :class => 'button success' %></li>
       <li><%= link_to('Students', students_path, :class => 'button success') %></li>
       <li><%= link_to('Assignments', assignments_path, :class => 'button success') %></li>
+      <li><%= link_to('Login', '#', :class => 'button success', :"data-dropdown" => 'drop') %></li>
     </ul>
   </div>
+</div>
+<div id = 'drop', class = 'f-dropdown content'>
+  <%= render :partial => 'session/form' %>
 </div>

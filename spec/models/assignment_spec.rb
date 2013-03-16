@@ -44,8 +44,6 @@ describe Assignment do
       expect(assignment.id).to be nil
     end
   end
-
-
   describe '#grade' do
     it 'belongs to an assignment' do
       assignment = Assignment.new

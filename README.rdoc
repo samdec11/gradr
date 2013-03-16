@@ -1,0 +1,1 @@
+Gradr expands on the Homewrkr project, allowing teachers to sign in and monitor the activities of their students. Teachers can make new assignments, grade the students on those assignments, and see graphs of the students' grades over time.

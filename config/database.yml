@@ -1,21 +1,21 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: homewrkr_development
+  database: gradr_development
   pool: 5
   username: Sean
   password:
 test:
   adapter: postgresql
   encoding: unicode
-  database: homewrkr_test
+  database: gradr_test
   pool: 5
   username: Sean
   password:
 production:
   adapter: postgresql
   encoding: unicode
-  database: homewrkr_production
+  database: gradr_production
   pool: 5
   username: Sean
   password:

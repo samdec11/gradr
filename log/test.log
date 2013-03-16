@@ -11324,3 +11324,33 @@ Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
   [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL[0m
   [1m[35m (17.1ms)[0m  TRUNCATE TABLE "assignments_students", "students", "groups", "assignments", "groups_students" RESTART IDENTITY CASCADE;
   [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddStudentsTable (20130314213428)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314213428')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddAssignmentsTable (20130314215027)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "assignments" ("id" serial primary key, "name" character varying(255), "groupsize" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314215027')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddGroupsTable (20130314220238)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "name" character varying(255), "assignment_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314220238')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddAssignmentsStudentsTable (20130314222036)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "assignments_students" ("student_id" integer, "assignment_id" integer) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314222036')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddGroupsStudentsTable (20130314222905)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "groups_students" ("student_id" integer, "group_id" integer) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314222905')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 

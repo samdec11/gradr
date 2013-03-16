@@ -1810,3 +1810,22 @@ Migrating to AddGroupsStudentsTable (20130314222905)
   [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314222905')
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-16 12:48:41 -0400
+Connecting to database specified by database.yml
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (4.4ms)
+Compiled foundation/css/normalize.css  (0ms)  (pid 7480)
+Compiled foundation/css/foundation.min.css  (0ms)  (pid 7480)
+Compiled homewrkr.css  (15ms)  (pid 7480)
+Compiled application.css  (30ms)  (pid 7480)
+Compiled jquery.js  (2ms)  (pid 7480)
+Compiled jquery_ujs.js  (0ms)  (pid 7480)
+Compiled foundation/js/vendor/custom.modernizr.js  (0ms)  (pid 7480)
+Compiled foundation/js/vendor/zepto.js  (0ms)  (pid 7480)
+Compiled foundation/js/foundation.min.js  (0ms)  (pid 7480)
+Compiled homewrkr.js  (0ms)  (pid 7480)
+Compiled application.js  (88ms)  (pid 7480)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 247ms (Views: 246.6ms | ActiveRecord: 0.0ms)

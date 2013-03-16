@@ -11354,3 +11354,438 @@ Migrating to AddGroupsStudentsTable (20130314222905)
   [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130314222905')
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Started GET "/" for 127.0.0.1 at 2013-03-16 12:49:12 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (3.9ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'gradr_test'
+  [1m[36m (5.1ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2013-03-16 12:49:12 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:12 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "assignments" [0m
+  Rendered assignments/_assignments.html.haml (44.6ms)
+  Rendered assignments/index.html.haml within layouts/application (47.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 12.9ms | ActiveRecord: 41.0ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL
+  [1m[36m (4.1ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:12 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "assignments" [0m
+  Rendered assignments/_assignments.html.haml (1.5ms)
+  Rendered assignments/index.html.haml within layouts/application (2.6ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL
+  [1m[36m (5.1ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:12 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:12 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:13 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:16 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "assignments" 
+  Rendered assignments/_assignments.html.haml (2.0ms)
+  Rendered assignments/index.html.haml within layouts/application (3.0ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+Started GET "/assignments/new" for 127.0.0.1 at 2013-03-16 12:49:17 -0400
+Processing by AssignmentsController#new as JS
+  Rendered assignments/_form.html.haml (10.9ms)
+  Rendered assignments/new.js.erb (12.6ms)
+Completed 200 OK in 28ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+Started POST "/assignments" for 127.0.0.1 at 2013-03-16 12:49:17 -0400
+Processing by AssignmentsController#create as JS
+  Parameters: {"utf8"=>"✓", "assignment"=>{"name"=>"Rockr", "groupsize"=>"2"}, "commit"=>"Create Assignment"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "students".* FROM "students" 
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "students" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "students".* FROM "students" 
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 1"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (1, 12)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (1, 5)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 2"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (2, 17)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (2, 10)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 3"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (3, 7)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (3, 16)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 4"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (4, 1)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (4, 9)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 5"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (5, 21)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (5, 18)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 6"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (6, 11)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (6, 6)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 7"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (7, 3)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (7, 23)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 8"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (8, 14)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (8, 2)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 9"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (9, 19)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (9, 20)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 10"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (10, 8)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (10, 13)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["name", "Group 11"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (11, 15)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "groups_students" ("group_id", "student_id") VALUES (11, 22)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (11, 4)
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "groups_students" ON "students"."id" = "groups_students"."student_id" WHERE "groups_students"."group_id" = 11[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "assignments" ("created_at", "groupsize", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00], ["groupsize", 2], ["name", "Rockr"], ["updated_at", Sat, 16 Mar 2013 16:49:17 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.756623' WHERE "groups"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.758747' WHERE "groups"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.759707' WHERE "groups"."id" = 3[0m
+  [1m[35m (0.3ms)[0m  UPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.760600' WHERE "groups"."id" = 4
+  [1m[36m (0.3ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.762042' WHERE "groups"."id" = 5[0m
+  [1m[35m (0.3ms)[0m  UPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.763340' WHERE "groups"."id" = 6
+  [1m[36m (0.3ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.764301' WHERE "groups"."id" = 7[0m
+  [1m[35m (0.2ms)[0m  UPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.765258' WHERE "groups"."id" = 8
+  [1m[36m (0.2ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.766165' WHERE "groups"."id" = 9[0m
+  [1m[35m (0.3ms)[0m  UPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.767055' WHERE "groups"."id" = 10
+  [1m[36m (0.2ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:17.768283' WHERE "groups"."id" = 11[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "assignments" [0m
+  [1m[35mAssignment Load (0.5ms)[0m  SELECT "assignments".* FROM "assignments" ORDER BY name
+  Rendered assignments/_assignments.html.haml (5.7ms)
+  Rendered assignments/create.js.erb (7.0ms)
+Completed 200 OK in 198ms (Views: 9.6ms | ActiveRecord: 41.1ms)
+  [1m[36mAssignment Load (0.6ms)[0m  [1mSELECT "assignments".* FROM "assignments" LIMIT 1[0m
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments" LIMIT 1
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "groups" WHERE "groups"."assignment_id" = 1
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."assignment_id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "students" INNER JOIN "groups_students" ON "students"."id" = "groups_students"."student_id" WHERE "groups_students"."group_id" = 1[0m
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."assignment_id" = 1 ORDER BY "groups"."id" DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "students" INNER JOIN "groups_students" ON "students"."id" = "groups_students"."student_id" WHERE "groups_students"."group_id" = 11
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL[0m
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:18 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "assignments" 
+  Rendered assignments/_assignments.html.haml (1.4ms)
+  Rendered assignments/index.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+Started GET "/assignments/new" for 127.0.0.1 at 2013-03-16 12:49:18 -0400
+Processing by AssignmentsController#new as JS
+  Rendered assignments/_form.html.haml (2.2ms)
+  Rendered assignments/new.js.erb (4.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.8ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:18 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "assignments" 
+  Rendered assignments/_assignments.html.haml (1.2ms)
+  Rendered assignments/index.html.haml within layouts/application (2.4ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+Started GET "/assignments/new" for 127.0.0.1 at 2013-03-16 12:49:18 -0400
+Processing by AssignmentsController#new as JS
+  Rendered assignments/_form.html.haml (2.1ms)
+  Rendered assignments/new.js.erb (2.5ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.6ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT "students".* FROM "students" [0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "assignments" ("created_at", "groupsize", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:18 UTC +00:00], ["groupsize", 2], ["name", "Rockr"], ["updated_at", Sat, 16 Mar 2013 16:49:18 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Started GET "/assignments" for 127.0.0.1 at 2013-03-16 12:49:18 -0400
+Processing by AssignmentsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "assignments" 
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments" ORDER BY name[0m
+  Rendered assignments/_assignments.html.haml (2.4ms)
+  Rendered assignments/index.html.haml within layouts/application (3.1ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+Started GET "/assignments/new" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by AssignmentsController#new as JS
+  Rendered assignments/_form.html.haml (2.7ms)
+  Rendered assignments/new.js.erb (3.2ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/assignments" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by AssignmentsController#create as JS
+  Parameters: {"utf8"=>"✓", "assignment"=>{"name"=>"Rockr", "groupsize"=>"2"}, "commit"=>"Create Assignment"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT "students".* FROM "students" [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "assignments" ("created_at", "groupsize", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00], ["groupsize", 2], ["name", "Rockr"], ["updated_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "assignments" 
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments" ORDER BY name[0m
+  Rendered assignments/_assignments.html.haml (50.8ms)
+  Rendered assignments/create.js.erb (51.2ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 2.2ms)
+Started GET "/assignments/1" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mGroup Load (0.8ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE "groups"."assignment_id" = 1 ORDER BY created_at[0m
+  Rendered assignments/show.html.haml within layouts/application (3.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (4.4ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students" 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "assignments" ("created_at", "groupsize", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00], ["groupsize", 2], ["name", "Rockr"], ["updated_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00], ["name", "Group 1"], ["updated_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:19 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "groups_students" ("group_id", "student_id") VALUES (1, 1)
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "groups" SET "assignment_id" = 1, "updated_at" = '2013-03-16 16:49:19.908064' WHERE "groups"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Started GET "/assignments/1" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.6ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mGroup Load (0.7ms)[0m  SELECT "groups".* FROM "groups" WHERE "groups"."assignment_id" = 1 ORDER BY created_at
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "groups_students" ON "students"."id" = "groups_students"."student_id" WHERE "groups_students"."group_id" = 1[0m
+  Rendered assignments/show.html.haml within layouts/application (3.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/students" for 127.0.0.1 at 2013-03-16 12:49:19 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "students" 
+  Rendered students/_students.html.haml (2.8ms)
+  Rendered students/index.html.haml within layouts/application (6.6ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+Started GET "/students/new" for 127.0.0.1 at 2013-03-16 12:49:20 -0400
+Processing by StudentsController#new as JS
+  Rendered students/_form.html.haml (3.9ms)
+  Rendered students/new.js.erb (5.6ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.8ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/students" for 127.0.0.1 at 2013-03-16 12:49:20 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "students" 
+  Rendered students/_students.html.haml (1.3ms)
+  Rendered students/index.html.haml within layouts/application (2.1ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+Started GET "/students/new" for 127.0.0.1 at 2013-03-16 12:49:20 -0400
+Processing by StudentsController#new as JS
+  Rendered students/_form.html.haml (1.8ms)
+  Rendered students/new.js.erb (2.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.8ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/students" for 127.0.0.1 at 2013-03-16 12:49:20 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "students" 
+  Rendered students/_students.html.haml (1.0ms)
+  Rendered students/index.html.haml within layouts/application (1.7ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+Started GET "/students/new" for 127.0.0.1 at 2013-03-16 12:49:21 -0400
+Processing by StudentsController#new as JS
+  Rendered students/_form.html.haml (2.1ms)
+  Rendered students/new.js.erb (2.4ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/students" for 127.0.0.1 at 2013-03-16 12:49:21 -0400
+Processing by StudentsController#create as JS
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"Bob"}, "commit"=>"Create Student"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "students" 
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" ORDER BY name[0m
+  Rendered students/_students.html.haml (3.4ms)
+  Rendered students/create.js.erb (5.3ms)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 2.0ms)
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students" LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.2ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2013-03-16 12:49:21 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/students" for 127.0.0.1 at 2013-03-16 12:49:21 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "students" 
+  Rendered students/_students.html.haml (1.1ms)
+  Rendered students/index.html.haml within layouts/application (1.8ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+Started GET "/students" for 127.0.0.1 at 2013-03-16 12:49:21 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "students" 
+  Rendered students/_students.html.haml (1.0ms)
+  Rendered students/index.html.haml within layouts/application (1.8ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.2ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "groups" ("assignment_id", "created_at", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["assignment_id", nil], ["created_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00], ["name", "Group 1"], ["updated_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.8ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.1ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.7ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.9ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.7ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (0.3ms)[0m  SELECT "students".* FROM "students" 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "assignments" ("created_at", "groupsize", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00], ["groupsize", 2], ["name", "Rockr"], ["updated_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (4.1ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (4.2ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.7ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.7ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.8ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00], ["name", "Bob"], ["updated_at", Sat, 16 Mar 2013 16:49:21 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.3ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL
+  [1m[36m (3.9ms)[0m  [1mTRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "groups_students" DISABLE TRIGGER ALL;ALTER TABLE "assignments_students" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "assignments" DISABLE TRIGGER ALL;ALTER TABLE "groups" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.8ms)[0m  TRUNCATE TABLE "students", "assignments", "groups", "assignments_students", "groups_students" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "groups_students" ENABLE TRIGGER ALL;ALTER TABLE "assignments_students" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "assignments" ENABLE TRIGGER ALL;ALTER TABLE "groups" ENABLE TRIGGER ALL[0m

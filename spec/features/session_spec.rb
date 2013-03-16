@@ -12,27 +12,31 @@ describe 'Session' do
       visit root_path
       click_link('Login')
       page.should have_button('Cancel')
+      page.should have_selector('#drop', visible: true)
       page.should have_button('Start Grading')
     end
   end
-  # describe 'JS cancel_form()' do
-  #   it 'removes the login form', :js => true do
-  #     visit root_path
-  #     click_link('Login')
-  #     click_button('Cancel')
-  #     page.should_not have_button('Start Grading')
-  #   end
-  # end
-  # describe 'POST /login' do
-  #   let(:teacher) { Teacher.create(email: 'bob@gmail.com', name: 'Bob', password: 'a', password_confirmation: 'a') }
-  #   it 'logs the teacher into the system if credentials are correct', :js => true do
-  #     visit root_path
-  #     click_link('Login')
-  #     fill_in('Email', :with => teacher.email)
-  #     fill_in('Password', :with => 'a')
-  #     click_button('Start Grading')
-  #     visit root_path
+  describe 'JS cancel_form()' do
+    it 'removes the login form', :js => true do
+      visit root_path
+      click_link('Login')
+      click_button('Cancel')
+      page.should have_selector('#drop', visible: false)
+    end
+  end
+  describe 'POST /login' do
+    let(:teacher) { Teacher.create(email: 'bob@gmail.com', name: 'Bob', password: 'a', password_confirmation: 'a') }
+    it 'logs the teacher into the system if credentials are correct', :js => true do
+      visit root_path
+      click_link('Login')
+      fill_in('Email', :with => teacher.email)
+      fill_in('Password', :with => 'a')
+      click_button('Start Grading')
+      visit root_path
 
+      page.should have_selector('#drop', visible: false)
+    end
+  end
   #     page.should_not have_button('Start Grading')
   #     page.should have_link('Bob')
   #     page.should_not have_link('Register')

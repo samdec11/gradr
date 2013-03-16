@@ -46,10 +46,9 @@ ActiveRecord::Schema.define(:version => 20130316180135) do
   create_table "teachers", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

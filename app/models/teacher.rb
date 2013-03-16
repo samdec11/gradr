@@ -16,4 +16,5 @@ class Teacher < ActiveRecord::Base
   has_secure_password
   attr_accessible :name, :email, :password, :password_confirmation
   validates :name, :email, :password, :presence => true
+  has_many :groups
 end

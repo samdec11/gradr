@@ -33,7 +33,7 @@ describe Teacher do
       group = Group.new
       teacher = Teacher.new
       student = Student.new
-      teacher.groups.first.students.first << student
+      teacher.groups.first.students << student
       expect(teacher.groups.first.students.first).to be_an_instance_of(Student)
     end
   end

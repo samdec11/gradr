@@ -1,4 +1,5 @@
 $(function() {
+  // ($(document).not($('#drop'))).click(cancel_form);
 
 });
 

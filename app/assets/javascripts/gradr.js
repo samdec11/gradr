@@ -9,3 +9,11 @@ function cancel_form()
   $('#email').val("");
   $('#password').val("");
 }
+
+
+function cancel_class_form()
+{
+  $('#classform').empty();
+  $('#add_class_button').show();
+  $('#add_student_button').show();
+}

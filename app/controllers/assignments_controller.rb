@@ -10,6 +10,7 @@ class AssignmentsController < ApplicationController
 
   def new
     @assignment = Assignment.new
+    @groups = @auth.groups
   end
   def create
     @assignment = Assignment.create(params[:assignment])

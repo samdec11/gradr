@@ -1,14 +1,24 @@
-#class
+.small-2.columns
+.small-8.columns
   .row
-    =(render :partial => 'classes')
+    %h4= @auth.name + '\'s Classes'
+  #class
+    .row
+      =(render :partial => 'classes')
 
-.row
-  #students
+  .row
+    #students
 
-=link_to('Add Class', new_group_path, :remote => true)
-.row
-  #classform
+    #add_class_button=link_to('Add Class', new_group_path, :remote => true, :class => 'button gradrbutton')
+  .row
+    #classform
 
-.row
-  #students
+  .row
+    #students
 
+    #add_student_button=link_to('Add Student', new_student_path, :remote => true, :class => 'button gradrbutton')
+  .row
+    #add_student_form
+
+
+.small-2.columns

@@ -6,7 +6,9 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new
   end
   def create
-    @teacher = Teacher.create(params[:name])
-    @teachers = Teacher.order(:name)
+    @teacher = Teacher.new(params[:teacher])
+    if @teacher.save
+      @teachers = Teacher.order(:name)
+    end
   end
 end

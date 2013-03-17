@@ -1,2 +1,5 @@
-- @groups.each do |group|
-  = link_to(group.name, group, :remote => true)
+.row
+  %table
+    - @groups.each do |group|
+      %tr
+      %td= link_to(group.name, group, :remote => true)

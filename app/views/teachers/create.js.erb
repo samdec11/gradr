@@ -1,0 +1,6 @@
+<% if @teacher.valid? %>
+  $('#new_account_form').empty().after('<p>You have successfully created an account!</p>');
+  $('#new_account_form + p').fadeOut(3000, function(){ $('#form + p').remove(); });
+<% else %>
+  $('#new_account_form').empty().append('<%=j render :partial => 'form' %>');
+<% end %>

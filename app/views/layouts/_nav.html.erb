@@ -10,7 +10,7 @@
         <li><%= link_to('Assignments', assignments_path, :class => 'button success') %></li>
         <li><%= link_to(@auth.name, login_path, :method => :delete, :class => 'button alert') %></li>
       <% else %>
-        <li><%= link_to('Create Account', '#', :class => 'button success') %></li>
+        <li><%= link_to('Create Account', new_teacher_path, :class => 'button success', :remote => true) %></li>
         <li><%= link_to('Login', '#', :class => 'button success', :"data-dropdown" => 'drop') %></li>
       <% end %>
     </ul>

@@ -1,0 +1,6 @@
+= form_for @student, students_path, :method => :post, :remote => true do |f|
+  = hidden_field_tag 'student[group_id]', .id
+  = f.label :name
+  = f.text_field :name, :autofocus => true
+  = button_to_function('Cancel', 'cancel_student_form()', :class => 'button radius alert')
+  = f.submit :class => 'button radius success'

@@ -2,8 +2,7 @@
   %table
     %tr
       %th Name
-      %th Group Size
     - @assignments.each do |assignment|
       %tr
         %td= link_to(assignment.name, assignment)
-        %td= assignment.groupsize
+

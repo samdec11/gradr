@@ -9,7 +9,7 @@
 #
 
 class Student < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :group_id
   validates :name, :presence => :true
   has_many :grades
   has_and_belongs_to_many :groups

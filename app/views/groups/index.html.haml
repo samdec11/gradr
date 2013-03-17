@@ -1,3 +1,5 @@
-- @groups.each do |group|
-  = link_to(group, group_path(group), :remote => true)
-#students
+.row
+  - @groups.each do |group|
+    = link_to(group, group_path(group), :remote => true)
+.row
+  #students

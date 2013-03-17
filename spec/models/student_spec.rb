@@ -17,14 +17,14 @@ describe Student do
       expect(student).to be_an_instance_of(Student)
     end
   end
-  describe '#assignments' do
-    it 'has assignments' do
-      assignment = Assignment.new
-      student = Student.new
-      student.assignments << assignment
-      expect(student.assignments.first).to be_an_instance_of(Assignment)
-    end
-  end
+  # describe '#assignments' do
+  #   it 'has assignments' do
+  #     assignment = Assignment.new
+  #     student = Student.new
+  #     student.assignments << assignment
+  #     expect(student.assignments.first).to be_an_instance_of(Assignment)
+  #   end
+  # end
   describe '#groups' do
     it 'has groups' do
       group = Group.new

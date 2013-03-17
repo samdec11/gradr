@@ -1,2 +1,3 @@
 - @groups.each do |group|
-  = group.name
+  = link_to(group, group_path(group), :remote => true)
+#students

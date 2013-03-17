@@ -1,0 +1,9 @@
+.small-3.columns
+.small-4.columns
+  = form_for @group, :url => groups_path, :remote => true do |f|
+    = hidden_field_tag 'group[teacher_id]', @auth.id
+    = f.label :name
+    = f.text_field :name, :autofocus => true
+    = button_to_function('Cancel', 'cancel_class_form()', :class => 'button radius alert')
+    = f.submit :class => 'button radius success'
+.small-5.columns

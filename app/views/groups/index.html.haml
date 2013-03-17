@@ -1,5 +1,10 @@
-.row
-  - @groups.each do |group|
-    = link_to(group, group, :remote => true)
+#class
+  .row
+    =(render :partial => 'classes')
+
 .row
   #students
+
+=link_to('Add Class', new_group_path, :remote => true)
+.row
+  #classform

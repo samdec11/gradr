@@ -14,6 +14,8 @@ class GroupsController < ApplicationController
   end
   def create
     @group = Group.create(params[:group])
-    @groups = Group.order(:name)
+    if @group.save
+      @groups = Group.order(:name)
+    end
   end
 end

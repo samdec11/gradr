@@ -18,6 +18,13 @@ function cancel_class_form()
   $('#add_student_button').show();
 }
 
+
+function cancel_student_form()
+{
+  $('#student_form').empty();
+  $('#new_student_button').show();
+}
+
 function cancel_create_form() {
   $('#new_account_form').empty();
 }

@@ -10,6 +10,8 @@ class StudentsController < ApplicationController
   def create
     @student = Student.create(params[:student])
     @students = Student.order(:name)
-
+  end
+  def show
+    @student = Student.find(params[:id])
   end
 end

@@ -3,9 +3,9 @@ require 'spec_helper'
 describe 'Teachers' do
   describe 'GET /' do
     it 'goes to the show page for the logged in teacher' do
-      teacher = Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
-      visit groups_path(teacher)
-      current_path.should == groups_path(teacher)
+      Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
+      login
+      current_path.should eq groups_path
     end
   end
 
@@ -14,12 +14,7 @@ describe 'Teachers' do
       teacher = Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
       group = Group.create(name: 'Class 1')
       teacher.groups << group
-      visit root_path
-      click_link('Login')
-      fill_in('Email', :with => teacher.email)
-      fill_in('Password', :with => 'a')
-      click_button('Start Grading')
-      visit groups_path
+      login
       page.should have_text('Class 1')
     end
   end
@@ -63,3 +58,11 @@ end
   #     expect(Student.first.name).to eq 'Bob'
   #   end
   # end
+
+  def login
+    visit root_path
+    click_link('Login')
+    fill_in('Email', :with => 'bob@gmail.com')
+    fill_in('Password', :with => 'a')
+    click_button('Start Grading')
+  end

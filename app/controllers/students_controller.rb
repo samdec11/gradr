@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_filter :ensure_logged_in
   def index
     @students = Student.order(:name)
   end

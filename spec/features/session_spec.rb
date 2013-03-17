@@ -34,7 +34,7 @@ describe 'Session' do
       click_button('Start Grading')
       visit root_path
 
-      page.should have_selector('#drop', visible: false)
+      page.should_not have_selector('#drop')
     end
   end
   #     page.should_not have_button('Start Grading')

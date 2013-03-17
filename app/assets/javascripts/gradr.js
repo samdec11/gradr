@@ -6,5 +6,6 @@ $(function() {
 function cancel_form()
 {
   $('#drop').removeClass('open').attr("style", "");
-  // $('#drop').empty().append("<*%=j render :partial => 'session/form' %>");
+  $('#email').val("");
+  $('#password').val("");
 }

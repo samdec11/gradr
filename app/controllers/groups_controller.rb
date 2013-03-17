@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
   before_filter :ensure_logged_in
   def index
     @groups = @auth.groups.order(:name) if @auth.present?
-    @groups = @groups.map{|group| group.name}
   end
   def show
     group = Group.find(params[:id])

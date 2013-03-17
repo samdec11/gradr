@@ -39,15 +39,15 @@ describe Teacher do
       expect(teacher.groups.first).to be_an_instance_of(Group)
     end
   end
-  describe '#students' do
-    it 'has students' do
-      group = Group.new
-      teacher = Teacher.new
-      student = Student.new
-      teacher.groups.first.students << student
-      expect(teacher.groups.first.students.first).to be_an_instance_of(Student)
-    end
-  end
+  # describe '#students' do
+  #   it 'has students' do
+  #     group = Group.new
+  #     teacher = Teacher.new
+  #     student = Student.new
+  #     teacher.groups.first.students << student
+  #     expect(teacher.groups.first.students.first).to be_an_instance_of(Student)
+  #   end
+  # end
   describe '.create' do
     it 'has an id' do
       teacher = Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')

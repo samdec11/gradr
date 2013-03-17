@@ -6,8 +6,8 @@ Grade.delete_all
 
 t1 = Teacher.create(name: 'Mr Bob', email: 'mrbob@gmail.com', password: 'a', password_confirmation:'a')
 
-g1 = Group.create(name: 'Class 1')
-g2 = Group.create(name: 'Class 2')
+g1 = Group.create(name: 'Algebra')
+g2 = Group.create(name: 'Calculus')
 
 s1 = Student.create(name: 'Sean')
 s2 = Student.create(name: 'Nicky')

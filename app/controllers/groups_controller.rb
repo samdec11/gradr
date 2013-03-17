@@ -5,8 +5,8 @@ class GroupsController < ApplicationController
     @groups = @groups.map{|group| group.name}
   end
   def show
-    group = params[:id]
-    @students = Group.group.first.students
+    group = Group.find(params[:id])
+    @students = group.students
   end
   def new
     @group = Group.new

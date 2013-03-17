@@ -45,7 +45,7 @@ describe 'Session' do
   #     page.should_not have_link('Register')
   #     page.should_not have_link('Login')
   #   end
-  #   it 'logs the teacher off the system', :js => true do
+  #   it 'logs the teacher off the system' do
   #     visit root_path
   #     click_link('Login')
   #     fill_in('Email', :with => teacher.email)

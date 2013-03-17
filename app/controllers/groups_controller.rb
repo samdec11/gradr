@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
   def new
     @group = Group.new
-
+    @students = Student.all
   end
   def create
     @group = Group.create(params[:group])

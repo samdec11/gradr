@@ -33,42 +33,44 @@ describe 'Session' do
       fill_in('Password', :with => 'a')
       click_button('Start Grading')
       visit root_path
-
       page.should_not have_selector('#drop')
+      page.should have_link('Bob')
+      page.should have_link('Students')
+      page.should have_link('Assignments')
+    end
+    it 'logs the teacher off the system' do
+      teacher = Teacher.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
+      login
+      click_link('Bob')
+      page.should_not have_link('Bob')
+      page.should_not have_link('Students')
+      page.should_not have_link('Assignments')
+      page.should have_selector('#drop', visible: false)
+      page.should have_link('Create Account')
+      page.should have_link('Login')
+      visit root_path
+      page.should_not have_link('Bob')
+      page.should_not have_link('Students')
+      page.should_not have_link('Assignments')
+      page.should have_selector('#drop', visible: false)
+      page.should have_link('Create Account')
+      page.should have_link('Login')
+    end
+    it 'does not log the teacher into the system if credentials are incorrect', :js => true do
+      visit root_path
+      click_link('Login')
+      fill_in('Email', :with => teacher.email)
+      fill_in('Password', :with => 'b')
+      click_button('Start Grading')
+      page.should have_button('Start Grading')
     end
   end
-  #     page.should_not have_button('Start Grading')
-  #     page.should have_link('Bob')
-  #     page.should_not have_link('Register')
-  #     page.should_not have_link('Login')
-  #     page.should have_link('Bob')
-  #     page.should_not have_link('Register')
-  #     page.should_not have_link('Login')
-  #   end
-  #   it 'logs the teacher off the system', :js => true do
-  #     visit root_path
-  #     click_link('Login')
-  #     fill_in('Email', :with => teacher.email)
-  #     fill_in('Password', :with => 'a')
-  #     click_button('Start Grading')
-  #     click_link('Bob')
-  #     page.should_not have_link('Bob')
-  #     page.should have_link('Register')
-  #     page.should have_link('Login')
-  #     page.should_not have_button('Free')
-  #     visit root_path
-  #     page.should_not have_link('Bob')
-  #     page.should have_link('Register')
-  #     page.should have_link('Login')
-  #     page.should_not have_button('Basic')
-  #   end
-  #   it 'does not log the teacher into the system if credentials are incorrect', :js => true do
-  #     visit root_path
-  #     click_link('Login')
-  #     fill_in('Email', :with => teacher.email)
-  #     fill_in('Password', :with => 'b')
-  #     click_button('Start Grading')
-  #     page.should have_button('Start Grading')
-  #   end
-  # end
+end
+
+def login
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => 'bob@gmail.com')
+  fill_in('Password', :with => 'a')
+  click_button('Start Grading')
 end

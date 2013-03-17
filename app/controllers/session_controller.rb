@@ -14,5 +14,6 @@ class SessionController < ApplicationController
   def destroy
     session[:teacher_id] = nil
     @auth = nil
+    redirect_to(root_path)
   end
 end

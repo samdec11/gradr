@@ -5,9 +5,12 @@
   <div class="large-6 columns">
     <ul class="button-group round even-1 alert right">
       <li><%= link_to 'Home', root_path, :class => 'button success' %></li>
-      <li><%= link_to('Students', students_path, :class => 'button success') %></li>
-      <li><%= link_to('Assignments', assignments_path, :class => 'button success') %></li>
-      <% if @auth.nil? %>
+      <% if @auth.present? %>
+        <li><%= link_to('Students', students_path, :class => 'button success') %></li>
+        <li><%= link_to('Assignments', assignments_path, :class => 'button success') %></li>
+        <li><%= link_to(@auth.name, login_path, :method => :delete, :class => 'button alert') %></li>
+      <% else %>
+        <li><%= link_to('Create Account', '#', :class => 'button success') %></li>
         <li><%= link_to('Login', '#', :class => 'button success', :"data-dropdown" => 'drop') %></li>
       <% end %>
     </ul>

@@ -9,7 +9,7 @@
 #
 
 class Grade < ActiveRecord::Base
-  attr_accessible :name, :assignment_id, :student_id
+  attr_accessible :name, :assignment_id, :student_id, :date
   has_one :student
   has_one :assignment
   belongs_to :student

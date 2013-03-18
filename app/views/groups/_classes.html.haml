@@ -1,5 +1,5 @@
 .row
-  %table
+  %ul
     - @groups.each do |group|
-      %tr
-        %td= link_to(group.name, group, :remote => true)
+      .class_names= link_to(group.name, :remote => true)
+      #class_students.hide= group.students.map(&:name).join(' ')

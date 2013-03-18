@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130316193116) do
     t.string  "name"
     t.integer "assignment_id"
     t.integer "student_id"
+    t.date    "date"
   end
 
   create_table "groups", :force => true do |t|

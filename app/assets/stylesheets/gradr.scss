@@ -29,6 +29,7 @@ h1 {
   font-size: 20px;
 }
 
+
 .checkboxes {
   list-style: none;
   float: left;
@@ -45,4 +46,60 @@ h1 {
 
 .clear {
   clear: both;
+}
+
+.class_names
+{
+  cursor: pointer;
+  min-height: 50px;
+  background-color: #7ECEFD;
+  color: black;
+  font-weight: bold;
+  width: 400px;
+  font-size: 22px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  list-style: none;
+}
+
+.class_names:hover
+{
+  background-color: #2185C5;
+  font-size: 23px;
+}
+
+
+.class_students
+{
+  background-color: #AFFDDD;
+  color: black;
+  width: 400px;
+  font-size: 22px;
+  border-bottom: 1px solid grey;
+  list-style: none;
+}
+
+.gradrbutton
+{
+  background-color: #5da423;
+  border-radius: 30px;
+}
+
+.gradrbutton:hover
+{
+  background-color: #457a1a;
+}
+
+.student_ckeckbox
+{
+  width: 150px;
+  display: inline-block;
+  font-size: 22px;
+  height: 30px;
+  line-height: 25px;
+}
+
+input#group_name
+{
+  font-size: 22px;
 }

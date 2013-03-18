@@ -1,11 +1,14 @@
 .row
-  .small-8.columns
+  .small-6.columns
     %h4= @auth.name + '\'s Classes'
+.row
+  .small-6.columns
     #class
       =(render :partial => 'classes')
+
+  .small-6.columns
     #add_class_button=link_to('Add Class', new_group_path, :remote => true, :class => 'button gradrbutton')
-  .small-2.columns
-.row
-  .small-5.columns
     #classform
-  .small-7.columns
+
+
+

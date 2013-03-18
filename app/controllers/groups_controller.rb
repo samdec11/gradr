@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(params[:group])
     if @group.save
-      @groups = Group.order(:name)
+      @groups = @auth.groups.order(:name)
     end
   end
 end

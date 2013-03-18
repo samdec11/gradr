@@ -10,7 +10,7 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :name, :teacher_id
+  attr_accessible :name, :teacher_id, :student_ids
   validates :name, :presence => true
   has_and_belongs_to_many :students
   has_many :assignments

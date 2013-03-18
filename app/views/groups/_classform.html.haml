@@ -5,7 +5,7 @@
     = f.label :name
     = f.text_field :name, :autofocus => true
     %p
-      - Student.find(:all, :order => :name).each do |student|
+      - Student.order(:name).each do |student|
         %span= student.name
         = check_box_tag 'group[student_ids][]', student.id, student.in?(@group.students.to_a)
     = button_to_function('Cancel', 'cancel_class_form()', :class => 'button radius alert')

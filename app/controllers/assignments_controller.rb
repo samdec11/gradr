@@ -15,6 +15,5 @@ class AssignmentsController < ApplicationController
   def create
     @assignment = Assignment.create(params[:assignment])
     @assignments = Assignment.order(:name)
-
   end
 end

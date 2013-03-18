@@ -15,19 +15,16 @@ ActiveRecord::Schema.define(:version => 20130316193116) do
 
   create_table "assignments", :force => true do |t|
     t.string   "name"
+    t.integer  "grade_id"
+    t.integer  "student_id"
+    t.integer  "group_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "assignments_students", :id => false, :force => true do |t|
-    t.integer "student_id"
-    t.integer "assignment_id"
-  end
-
   create_table "grades", :force => true do |t|
     t.string  "name"
-    t.integer "assignment_id"
-    t.integer "student_id"
+    t.integer "value"
     t.date    "date"
   end
 

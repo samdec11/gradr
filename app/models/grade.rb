@@ -6,12 +6,11 @@
 #  name          :string(255)
 #  assignment_id :integer
 #  student_id    :integer
+#  date          :date
+#  value         :integer
 #
 
 class Grade < ActiveRecord::Base
-  attr_accessible :name, :assignment_id, :student_id, :date
-  has_one :student
-  has_one :assignment
-  belongs_to :student
-  belongs_to :assignment
+  attr_accessible :name, :assignment_id, :student_id, :date, :value
+  has_many :assignments
 end

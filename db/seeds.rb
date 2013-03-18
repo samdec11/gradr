@@ -44,18 +44,20 @@ a5 = Assignment.create(name: 'Italian')
 a6 = Assignment.create(name: 'Geometry')
 a7 = Assignment.create(name: 'Biography project')
 a8 = Assignment.create(name: 'Essay assignment')
+a9 = Assignment.create(name: 'Algebra 1')
+a10 = Assignment.create(name: 'Algebra 1')
 
-gr1 = Grade.create(name: 'A+')
-gr2 = Grade.create(name: 'A')
-gr3 = Grade.create(name: 'A-')
-gr4 = Grade.create(name: 'B+')
-gr5 = Grade.create(name: 'B')
-gr6 = Grade.create(name: 'B-')
-gr7 = Grade.create(name: 'C+')
-gr8 = Grade.create(name: 'C')
-gr9 = Grade.create(name: 'C-')
-gr10 = Grade.create(name: 'D')
-gr11 = Grade.create(name: 'F')
+gr1 = Grade.create(name: 'A+', value: 10)
+gr2 = Grade.create(name: 'A', value: 9)
+gr3 = Grade.create(name: 'A-', value: 8)
+gr4 = Grade.create(name: 'B+', value: 7)
+gr5 = Grade.create(name: 'B', value: 6)
+gr6 = Grade.create(name: 'B-', value: 5)
+gr7 = Grade.create(name: 'C+', value: 4)
+gr8 = Grade.create(name: 'C', value: 3)
+gr9 = Grade.create(name: 'C-', value: 2)
+gr10 = Grade.create(name: 'D', value: 1)
+gr11 = Grade.create(name: 'F', value: 0)
 
 t1.groups = [g1, g2]
 t2.groups = [g3, g4]
@@ -63,4 +65,10 @@ t2.groups = [g3, g4]
 g1.students = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10]
 g2.students = [s10, s11, s12, s13, s14, s15, s16, s17, s18, s19]
 g3.students = [s15, s16, s17, s18, s19, s20, s21, s22, s23]
+
+s1.assignments << a2
+s2.assignments << a9
+s3.assignments << a10
+
+g1.assignments = [a2, a9, a10]
 

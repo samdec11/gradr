@@ -1,8 +1,11 @@
-- if @assignments.present?
+- if @groups.present?
   %table
     %tr
-      %th Name
-    - @assignments.each do |assignment|
+      %th Class
+      %th Assignment
+    - @groups.each do |group|
       %tr
-        %td= link_to(assignment.name, assignment)
+        %td= group.name
+        - binding.pry
+        - group.assignments
 

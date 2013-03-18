@@ -4,5 +4,6 @@
       %li.class_names
         = group.name
         %ul.class_students.hide
+          Students
           - group.students.order(:name).each do |student|
             %li= link_to student.name, student

@@ -6,6 +6,8 @@
 #  name          :string(255)
 #  assignment_id :integer
 #  student_id    :integer
+#  date          :date
+#  value         :integer
 #
 
 # require 'spec_helper'

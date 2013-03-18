@@ -11,6 +11,7 @@
 class Assignment < ActiveRecord::Base
   attr_accessible :name
   validates :name, :presence => true
-  has_one :grade
+  belongs_to :grade
+  belongs_to :student
   belongs_to :group
 end

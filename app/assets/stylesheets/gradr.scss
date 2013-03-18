@@ -28,3 +28,21 @@ h1 {
 #assignments, #students {
   font-size: 20px;
 }
+
+.checkboxes {
+  list-style: none;
+  float: left;
+  margin: 0 10px 20px 0;
+}
+
+.student_name {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}

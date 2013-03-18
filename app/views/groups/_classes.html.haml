@@ -1,5 +1,8 @@
 .row
   %ul
     - @groups.each do |group|
-      .class_names= link_to(group.name, :remote => true)
-      #class_students.hide= group.students.map(&:name).join(' ')
+      %li.class_names
+        = group.name
+        %ul.class_students.hide
+          - group.students.order(:name).each do |student|
+            %li= link_to student.name, student

@@ -2,9 +2,12 @@
     = hidden_field_tag 'group[teacher_id]', @auth.id
     = f.label :name
     = f.text_field :name, :autofocus => true
-    - Student.order(:name).each do |student|
-        = check_box_tag 'group[student_ids][]', student.id, student.in?(@group.students.to_a)
-        %span= student.name
-    %br
+    %h6 Students
+    %ul
+        - Student.order(:name).each do |student|
+            %li.checkboxes
+                .hide= check_box_tag 'group[student_ids][]', student.id, student.in?(@group.students.to_a)
+                %span.student_name= student.name
+    .clear
     = button_to_function('Cancel', 'cancel_class_form()', :class => 'button radius alert')
     = f.submit :class => 'button radius success'

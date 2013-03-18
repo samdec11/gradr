@@ -1,7 +1,7 @@
 $(function() {
   // ($(document).not($('#drop'))).click(cancel_form);
   $('.class_names').click(show_students_in_class);
-
+  $('#classform').on('click', '.student_name', toggle_checkbox);
 });
 
 function cancel_login_form()
@@ -32,5 +32,16 @@ function cancel_create_form() {
 
 function show_students_in_class()
 {
-  $('.class_names').children().show();
+  $(this).children().slideToggle();
+}
+
+function toggle_checkbox() {
+  checkbox = $(this).siblings().first().children().first();
+  checkbox.prop('checked', !checkbox.prop('checked'));
+  if(checkbox.prop('checked') == true) {
+    $(this).css('color', 'blue');
+  }
+  else {
+    $(this).css('color', 'red');
+  }
 }

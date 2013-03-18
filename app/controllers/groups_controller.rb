@@ -4,10 +4,6 @@ class GroupsController < ApplicationController
     @groups = @auth.groups.order(:name) if @auth.present?
     @student = Student.new
   end
-  def show
-    group = Group.find(params[:id])
-    @students = group.students
-  end
   def new
     @group = Group.new
     @students = Student.all

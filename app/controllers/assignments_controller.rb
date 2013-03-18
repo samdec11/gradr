@@ -1,7 +1,7 @@
 class AssignmentsController < ApplicationController
   before_filter :ensure_logged_in
   def index
-    @assignments = Assignment.order(:name)
+    @assignments = @auth.groups.map(&:assignments)
   end
   def show
     @assignment = Assignment.find(params[:id])

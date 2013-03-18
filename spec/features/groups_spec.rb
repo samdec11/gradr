@@ -8,7 +8,6 @@ describe 'Groups' do
       current_path.should eq groups_path
     end
   end
-
 end
 
 def login

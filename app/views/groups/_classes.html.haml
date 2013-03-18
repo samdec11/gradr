@@ -1,5 +1,7 @@
 .row
-  %ul
+  #all_classes
     - @groups.each do |group|
-      .class_names= link_to(group.name, :js => true)
-      #class_students.hide= group.students.map(&:name).join(' ')
+      .class_names= group.name if group.teacher_id == @auth.id
+      .class_students.hide
+        - group.students.each do |student|
+          = link_to(student.name, student_path(student))

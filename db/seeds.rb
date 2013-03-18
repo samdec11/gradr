@@ -55,8 +55,7 @@ gr7 = Grade.create(name: 'C+')
 gr8 = Grade.create(name: 'C')
 gr9 = Grade.create(name: 'C-')
 gr10 = Grade.create(name: 'D')
-gr11 = Grade.create(name: 'E')
-gr12 = Grade.create(name: 'F')
+gr11 = Grade.create(name: 'F')
 
 t1.groups = [g1, g2]
 t2.groups = [g3, g4]

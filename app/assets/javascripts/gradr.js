@@ -1,6 +1,6 @@
 $(function() {
   // ($(document).not($('#drop'))).click(cancel_form);
-  $('.class_names').click(show_students_in_class);
+  $('.class_names').click(toggle_students_in_class);
 
 });
 
@@ -30,7 +30,9 @@ function cancel_create_form() {
   $('#new_account_form').empty();
 }
 
-function show_students_in_class()
+function toggle_students_in_class()
 {
-  $('.class_names').children().show();
+   $(this).next().slideToggle('slow');
+
 }
+

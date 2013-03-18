@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     @students = Student.all
   end
   def create
-    @group = Group.create(params[:group])
+    @group = Group.new(params[:group])
     if @group.save
       @groups = Group.order(:name)
     end

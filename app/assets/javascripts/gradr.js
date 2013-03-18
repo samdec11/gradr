@@ -1,5 +1,6 @@
 $(function() {
   // ($(document).not($('#drop'))).click(cancel_form);
+  $('.class_names').click(show_students_in_class);
 
 });
 
@@ -27,4 +28,9 @@ function cancel_student_form()
 
 function cancel_create_form() {
   $('#new_account_form').empty();
+}
+
+function show_students_in_class()
+{
+  $('.class_names').children().show();
 }
